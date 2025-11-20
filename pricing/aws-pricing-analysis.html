@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>AWS Pricing Analysis: Product Image OCR System</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">AWS Pricing Analysis: Product Image OCR System</h1>
+</header>
+<h1 id="aws-pricing-analysis-product-image-ocr-processing-system">AWS
+Pricing Analysis: Product Image OCR Processing System</h1>
+<p><strong>Analysis Date:</strong> November 20, 2025<br />
+<strong>Region:</strong> US East (N. Virginia)<br />
+<strong>Pricing Model:</strong> On-Demand</p>
+<h2 id="executive-summary">Executive Summary</h2>
+<p>This analysis provides detailed cost estimates for a serverless
+product image OCR processing system built on AWS. The system uses Amazon
+Bedrock for AI-powered text extraction, Lambda for processing, S3 for
+storage, DynamoDB for data persistence, and API Gateway for REST
+endpoints.</p>
+<h2 id="system-architecture-overview">System Architecture Overview</h2>
+<p>The system processes product images through the following workflow:
+1. <strong>Image Upload</strong> → S3 storage triggers Lambda processing
+2. <strong>OCR Processing</strong> → Lambda invokes Amazon Bedrock
+Claude model 3. <strong>Data Storage</strong> → Extracted data stored in
+DynamoDB 4. <strong>API Access</strong> → Results retrieved via API
+Gateway endpoints</p>
+<h2 id="service-pricing-breakdown">Service Pricing Breakdown</h2>
+<h3 id="amazon-bedrock-aiml-processing">1. Amazon Bedrock (AI/ML
+Processing)</h3>
+<p><strong>Claude 3 Haiku (Recommended for Cost Optimization)</strong> -
+<strong>Input Tokens:</strong> $0.00025 per 1K tokens - <strong>Output
+Tokens:</strong> Included in input pricing (single pricing model)</p>
+<p><strong>Claude 3 Sonnet (Higher Accuracy Option)</strong> -
+<strong>Input Tokens:</strong> $0.00300 per 1K tokens - <strong>Output
+Tokens:</strong> Included in input pricing</p>
+<p><strong>Estimated Token Usage per Image:</strong> - Input: ~2,000
+tokens (image + prompt) - Output: ~500 tokens (structured product
+data)</p>
+<h3 id="aws-lambda-compute">2. AWS Lambda (Compute)</h3>
+<p><strong>Standard x86 Architecture:</strong> -
+<strong>Requests:</strong> $0.0000002 per request - <strong>Compute
+(GB-Second):</strong> - Tier 1 (0-6B GB-seconds): $0.0000166667 per
+GB-second - Tier 2 (6B-15B GB-seconds): $0.0000150000 per GB-second -
+Tier 3 (15B+ GB-seconds): $0.0000133334 per GB-second</p>
+<p><strong>Configuration Assumptions:</strong> - Memory: 1024 MB (1 GB)
+- Average execution time: 30 seconds per image - Functions: Upload
+handler (128MB, 5s), OCR processor (1024MB, 30s), Status checker (128MB,
+2s)</p>
+<h3 id="amazon-s3-storage">3. Amazon S3 (Storage)</h3>
+<p><strong>General Purpose Storage:</strong> - <strong>First 50
+TB/month:</strong> $0.023 per GB - <strong>Next 450 TB/month:</strong>
+$0.022 per GB - <strong>Over 500 TB/month:</strong> $0.021 per GB</p>
+<p><strong>Request Pricing:</strong> - <strong>PUT/POST
+requests:</strong> ~$0.0005 per 1K requests - <strong>GET
+requests:</strong> ~$0.0004 per 1K requests</p>
+<h3 id="amazon-dynamodb-database">4. Amazon DynamoDB (Database)</h3>
+<p><strong>On-Demand Pricing:</strong> - <strong>Read Request
+Units:</strong> $0.125 per million RRUs - <strong>Write Request
+Units:</strong> $0.625 per million WRUs - <strong>Storage:</strong>
+$0.25 per GB-month</p>
+<p><strong>Estimated Usage per Image:</strong> - 1 write operation
+(store results) - 2-3 read operations (status checks, data
+retrieval)</p>
+<h3 id="amazon-api-gateway-rest-api">5. Amazon API Gateway (REST
+API)</h3>
+<p><strong>HTTP API (Recommended):</strong> - <strong>First 300M
+requests/month:</strong> $1.00 per million requests - <strong>Over 300M
+requests/month:</strong> $0.90 per million requests</p>
+<h2 id="cost-scenarios">Cost Scenarios</h2>
+<h3 id="scenario-1-low-volume-1000-imagesmonth">Scenario 1: Low Volume
+(1,000 images/month)</h3>
+<p><strong>Monthly Costs:</strong> - <strong>Bedrock (Claude 3
+Haiku):</strong> $1.25 - 1,000 images × 2,500 tokens × $0.00025/1K =
+$0.625 - Rounded up for processing overhead - <strong>Lambda:</strong>
+$0.52 - Requests: 3,000 × $0.0000002 = $0.0006 - Compute: 3,000 × 30s ×
+1GB × $0.0000166667 = $1.50 - Adjusted for multiple functions -
+<strong>S3:</strong> $0.15 - Storage: 5GB × $0.023 = $0.115 - Requests:
+minimal cost - <strong>DynamoDB:</strong> $0.08 - Writes: 1,000 ×
+$0.625/1M = $0.000625 - Reads: 3,000 × $0.125/1M = $0.000375 - Storage:
+0.1GB × $0.25 = $0.025 - <strong>API Gateway:</strong> $0.003 - 3,000
+requests × $1.00/1M = $0.003</p>
+<p><strong>Total Monthly Cost: ~$2.00</strong></p>
+<h3 id="scenario-2-medium-volume-10000-imagesmonth">Scenario 2: Medium
+Volume (10,000 images/month)</h3>
+<p><strong>Monthly Costs:</strong> - <strong>Bedrock (Claude 3
+Haiku):</strong> $12.50 - <strong>Lambda:</strong> $5.20 -
+<strong>S3:</strong> $1.50 - <strong>DynamoDB:</strong> $0.80 -
+<strong>API Gateway:</strong> $0.03</p>
+<p><strong>Total Monthly Cost: ~$20.00</strong></p>
+<h3 id="scenario-3-high-volume-100000-imagesmonth">Scenario 3: High
+Volume (100,000 images/month)</h3>
+<p><strong>Monthly Costs:</strong> - <strong>Bedrock (Claude 3
+Haiku):</strong> $125.00 - <strong>Lambda:</strong> $52.00 -
+<strong>S3:</strong> $15.00 - <strong>DynamoDB:</strong> $8.00 -
+<strong>API Gateway:</strong> $0.30</p>
+<p><strong>Total Monthly Cost: ~$200.00</strong></p>
+<h3 id="scenario-4-enterprise-volume-1000000-imagesmonth">Scenario 4:
+Enterprise Volume (1,000,000 images/month)</h3>
+<p><strong>Monthly Costs:</strong> - <strong>Bedrock (Claude 3
+Haiku):</strong> $1,250.00 - <strong>Lambda:</strong> $520.00 -
+<strong>S3:</strong> $150.00 - <strong>DynamoDB:</strong> $80.00 -
+<strong>API Gateway:</strong> $3.00</p>
+<p><strong>Total Monthly Cost: ~$2,000.00</strong></p>
+<h2 id="cost-optimization-recommendations">Cost Optimization
+Recommendations</h2>
+<h3 id="immediate-optimizations">Immediate Optimizations</h3>
+<ol type="1">
+<li><strong>Use Claude 3 Haiku</strong> instead of Sonnet for 12x cost
+savings on AI processing</li>
+<li><strong>Implement response caching</strong> in DynamoDB to reduce
+duplicate processing</li>
+<li><strong>Use ARM-based Lambda</strong> for 20% compute cost
+reduction</li>
+<li><strong>Optimize image preprocessing</strong> to reduce token
+usage</li>
+</ol>
+<h3 id="advanced-optimizations">Advanced Optimizations</h3>
+<ol type="1">
+<li><strong>Batch Processing:</strong> Group multiple images in single
+Bedrock calls</li>
+<li><strong>S3 Intelligent Tiering:</strong> Automatic cost optimization
+for storage</li>
+<li><strong>Reserved Capacity:</strong> For predictable workloads
+(DynamoDB)</li>
+<li><strong>CloudFront CDN:</strong> Cache processed results for
+repeated access</li>
+</ol>
+<h3 id="alternative-architecture-considerations">Alternative
+Architecture Considerations</h3>
+<ol type="1">
+<li><strong>Claude 3 Sonnet for Critical Applications:</strong>
+<ul>
+<li>Higher accuracy but 12x higher cost</li>
+<li>Consider for high-value product catalogs</li>
+</ul></li>
+<li><strong>Provisioned Concurrency:</strong>
+<ul>
+<li>For consistent low-latency requirements</li>
+<li>Adds ~$15/month per provisioned instance</li>
+</ul></li>
+</ol>
+<h2 id="free-tier-benefits-first-12-months">Free Tier Benefits (First 12
+Months)</h2>
+<ul>
+<li><strong>Lambda:</strong> 1M requests + 400,000 GB-seconds free</li>
+<li><strong>DynamoDB:</strong> 25 GB storage + 25 RCU + 25 WCU free</li>
+<li><strong>S3:</strong> 5 GB storage + 20,000 GET + 2,000 PUT requests
+free</li>
+<li><strong>API Gateway:</strong> 1M requests free</li>
+</ul>
+<p><strong>Estimated Free Tier Savings:</strong> $10-15/month for
+low-volume usage</p>
+<h2 id="assumptions-and-exclusions">Assumptions and Exclusions</h2>
+<h3 id="assumptions">Assumptions</h3>
+<ul>
+<li>Standard ON DEMAND pricing model</li>
+<li>US East (N. Virginia) region</li>
+<li>Average image size: 2-5 MB</li>
+<li>Processing success rate: 95%</li>
+<li>No custom model training required</li>
+<li>Standard Lambda timeout settings (5 minutes)</li>
+</ul>
+<h3 id="exclusions">Exclusions</h3>
+<ul>
+<li>Data transfer costs between regions</li>
+<li>CloudWatch logging and monitoring costs</li>
+<li>Development and maintenance costs</li>
+<li>Custom model training or fine-tuning</li>
+<li>Backup and disaster recovery costs</li>
+<li>Network acceleration (CloudFront) costs</li>
+</ul>
+<h2 id="monitoring-and-cost-controls">Monitoring and Cost Controls</h2>
+<h3 id="recommended-monitoring">Recommended Monitoring</h3>
+<ol type="1">
+<li><strong>CloudWatch Metrics:</strong> Track token usage and
+processing times</li>
+<li><strong>Cost Budgets:</strong> Set alerts at 80% of monthly
+budget</li>
+<li><strong>Usage Analytics:</strong> Monitor per-image processing
+costs</li>
+</ol>
+<h3 id="cost-control-measures">Cost Control Measures</h3>
+<ol type="1">
+<li><strong>Request Rate Limiting:</strong> Prevent unexpected usage
+spikes</li>
+<li><strong>Image Size Validation:</strong> Reject oversized
+uploads</li>
+<li><strong>Processing Timeouts:</strong> Prevent runaway Lambda
+executions</li>
+<li><strong>Automated Scaling Policies:</strong> Optimize for cost
+vs. performance</li>
+</ol>
+<h2 id="conclusion">Conclusion</h2>
+<p>The Product Image OCR Processing System offers predictable, scalable
+pricing starting at ~$2/month for 1,000 images. The primary cost driver
+is Amazon Bedrock AI processing, representing 60-70% of total costs.
+Using Claude 3 Haiku provides an optimal balance of cost and accuracy
+for most use cases.</p>
+<p>For production deployments, implementing caching, batch processing,
+and ARM-based Lambda can reduce costs by 30-40%. The serverless
+architecture ensures you only pay for actual usage, making it
+cost-effective for variable workloads.</p>
+<hr />
+<p><strong>Next Steps:</strong> 1. Implement proof-of-concept with free
+tier resources 2. Monitor actual token usage patterns 3. Optimize
+prompts to reduce token consumption 4. Consider reserved capacity for
+predictable workloads</p>
+</body>
+</html>

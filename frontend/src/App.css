@@ -1,0 +1,265 @@
+.App {
+  text-align: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.App-header {
+  padding: 2rem 0;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.App-header h1 {
+  margin: 0 0 0.5rem 0;
+  font-size: 2.5rem;
+  font-weight: 300;
+}
+
+.App-header p {
+  margin: 0;
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.main-content {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.upload-section {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.drop-zone {
+  border: 2px dashed rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  padding: 3rem 2rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.drop-zone.active {
+  border-color: #4CAF50;
+  background: rgba(76, 175, 80, 0.1);
+}
+
+.drop-zone-content p {
+  margin: 0 0 1rem 0;
+  font-size: 1.1rem;
+}
+
+.file-input {
+  display: none;
+}
+
+.file-label {
+  background: #4CAF50;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  display: inline-block;
+}
+
+.file-label:hover {
+  background: #45a049;
+}
+
+.file-selected {
+  text-align: center;
+}
+
+.preview-image {
+  max-width: 300px;
+  max-height: 200px;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.action-buttons {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.upload-btn, .reset-btn, .process-another-btn {
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.upload-btn {
+  background: #2196F3;
+  color: white;
+}
+
+.upload-btn:hover:not(:disabled) {
+  background: #1976D2;
+}
+
+.upload-btn:disabled {
+  background: #666;
+  cursor: not-allowed;
+}
+
+.reset-btn, .process-another-btn {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.reset-btn:hover, .process-another-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.status-indicator {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error-message {
+  background: rgba(244, 67, 54, 0.1);
+  border: 1px solid rgba(244, 67, 54, 0.3);
+  border-radius: 8px;
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+.error-message h3 {
+  margin: 0 0 1rem 0;
+  color: #f44336;
+}
+
+.results-section {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: left;
+}
+
+.results-section h2 {
+  text-align: center;
+  margin: 0 0 2rem 0;
+  color: #4CAF50;
+}
+
+.result-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.result-item {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1rem;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.result-item.full-width {
+  grid-column: 1 / -1;
+}
+
+.result-item strong {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #4CAF50;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.result-item span {
+  display: block;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.result-item pre {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  border-radius: 4px;
+  overflow-x: auto;
+  font-size: 0.9rem;
+  margin: 0.5rem 0 0 0;
+}
+
+.processing-info {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1rem;
+  border-radius: 6px;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.processing-info p {
+  margin: 0.25rem 0;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.process-another-btn {
+  display: block;
+  margin: 0 auto;
+  background: #4CAF50;
+  color: white;
+}
+
+.process-another-btn:hover {
+  background: #45a049;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    padding: 1rem;
+  }
+  
+  .result-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .App-header h1 {
+    font-size: 2rem;
+  }
+}
